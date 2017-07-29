@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour {
             
         } else if (Input.GetKeyDown("right"))
         {
-            body.AddForce(Vector3.right * 200, ForceMode2D.Force);
+            body.AddForce(Vector2.right * 200, ForceMode2D.Force);
         }
         else if (Input.GetKeyDown("up"))
         {
