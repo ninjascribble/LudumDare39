@@ -2,33 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovement : MonoBehaviour
+{
+	private Rigidbody2D body;
+	private const float MAX_VELOCITY = 100;
+	private const int FORCE = 1200;
 
-    private Rigidbody2D body;
-	// Use this for initialization
-	void Start () {
-        body = GetComponent<Rigidbody2D>();
+	void Start() {
+		body = GetComponent<Rigidbody2D>();
 	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown("left"))
-        {
-            body.AddForce(Vector3.left * 50, ForceMode2D.Impulse);
-            
-        } else if (Input.GetKeyDown("right"))
-        {
-            body.AddForce(Vector2.right * 200, ForceMode2D.Force);
-        }
-        else if (Input.GetKeyDown("up"))
-        {
-            body.AddForce(Vector3.up * 50, ForceMode2D.Impulse);
-        }
-        else if (Input.GetKeyDown("down"))
-        {
-            body.AddForce(Vector3.down * 50, ForceMode2D.Impulse);
-        }
+	void FixedUpdate() {
+		float velocityDifference = Mathf.Abs(body.velocity.x) - MAX_VELOCITY;
 
-    }
+		if (Input.GetKey("left")) {
+			body.AddForce(Vector2.left * FORCE, ForceMode2D.Force);
+		} else if (Input.GetKey("right")) {
+			body.AddForce(Vector2.right * FORCE, ForceMode2D.Force);
+		}
+
+		if (velocityDifference > 0) {
+			if (body.velocity.x > 0) {
+				body.AddForce(Vector2.left * velocityDifference, ForceMode2D.Impulse);
+			} else {
+				body.AddForce(Vector2.right * velocityDifference, ForceMode2D.Impulse);
+			}
+		}
+	}
 }

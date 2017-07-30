@@ -20,8 +20,10 @@ public class Spawner : MonoBehaviour {
 
 		if (active) {
 			var position = transform.position;
+			var x = Screen.width / PixelPerfectCamera.scale / 2;
 
 			position.y += 100;
+			position.x = Random.Range (-x, x);
 
 			GameObjectUtil.Instantiate (prefabs [Random.Range (0, prefabs.Length)], position);
 			ResetDelay ();
