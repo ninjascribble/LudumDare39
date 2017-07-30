@@ -24,9 +24,10 @@ GameObject:
   - component: {fileID: 50774315743645862}
   - component: {fileID: 114859882165805744}
   - component: {fileID: 61828918628158896}
+  - component: {fileID: 114294934112273868}
   m_Layer: 0
   m_Name: EnergyTankWithPickupText
-  m_TagString: Untagged
+  m_TagString: booster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,6 +41,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4118245128011816}
   - component: {fileID: 212885053795642120}
+  - component: {fileID: 111166517549040502}
+  - component: {fileID: 114714291618539592}
   m_Layer: 0
   m_Name: EnergyTankPickUpText
   m_TagString: Untagged
@@ -67,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1344103039764910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.7, y: 50.6, z: 0}
+  m_LocalPosition: {x: 62.6, y: 95.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4118245128011816}
@@ -136,6 +139,44 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!111 &111166517549040502
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1488305201139668}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &114294934112273868
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1344103039764910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78a057c9833cb4506b9322d9c1294f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modifier: 5
+--- !u!114 &114714291618539592
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1488305201139668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0094613bcac6049bdb752fc4d8b34ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seconds: 0.2
 --- !u!114 &114859882165805744
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -178,7 +219,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2145238089
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 63fce5aca625f43de9ef73f6378b522f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -19,14 +19,18 @@ public class PlayerCollision : MonoBehaviour {
 	}
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        animator.SetBool("burst", true);
-		player.AddForce(Vector2.up * 100, ForceMode2D.Impulse);
-		GameStats.speed.y += 5;
+		if (collision.gameObject.tag == "booster") {
+			animator.SetBool ("burst", true);
+			player.AddForce (Vector2.up * 300, ForceMode2D.Impulse);
+			GameStats.speed.y += 7;
+		}
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
-		animator.SetBool("burst", false);
-		GameObjectUtil.Destroy (collision.gameObject);
+		if (collision.gameObject.tag == "booster") {
+			animator.SetBool ("burst", false);
+			GameObjectUtil.Destroy (collision.gameObject);
+		}
     }
 
 	private void OnCollisionEnter2D(Collision2D collision) {

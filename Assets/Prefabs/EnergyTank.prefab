@@ -25,9 +25,10 @@ GameObject:
   - component: {fileID: 114162076042462502}
   - component: {fileID: 61311058094441784}
   - component: {fileID: 114942936568263216}
+  - component: {fileID: 114947061950261552}
   m_Layer: 0
   m_Name: EnergyTank
-  m_TagString: Untagged
+  m_TagString: booster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,6 +131,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5677de2bc69c04a9fb614284098bf58b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114947061950261552
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1469999839924274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78a057c9833cb4506b9322d9c1294f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modifier: 5
 --- !u!212 &212552983965952382
 SpriteRenderer:
   m_ObjectHideFlags: 1

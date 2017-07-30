@@ -15,7 +15,13 @@ public class AnimatedTexture : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		offset += GameStats.speed * Time.deltaTime;
+		var step = GameStats.speed * Time.deltaTime;
+
+		if (step.y < 0.002f) {
+			step.y = 0.002f;
+		}
+
+		offset += step;
 		material.SetTextureOffset("_MainTex", offset);
     }
 }
