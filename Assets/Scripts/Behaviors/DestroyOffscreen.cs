@@ -45,11 +45,12 @@ public class DestroyOffscreen : MonoBehaviour {
 	}
 
 	void OnOutOfBounds () {
-		offscreen = false;
-		GameObjectUtil.Destroy (gameObject);
-
 		if (DestroyCallback != null) {
 			DestroyCallback ();
 		}
+
+		offscreen = false;
+
+		GameObjectUtil.Destroy (gameObject);
 	}
 }

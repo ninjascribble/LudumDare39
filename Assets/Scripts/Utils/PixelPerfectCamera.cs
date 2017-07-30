@@ -14,8 +14,8 @@ public class PixelPerfectCamera : MonoBehaviour {
 
 		if (camera.orthographic == true) {
 			scale = Screen.height / nativeResolution.y;
-			pixelsToUnits *= scale;
-			camera.orthographicSize = (Screen.height / 2f) / pixelsToUnits;
+			pixelsToUnits = 1f * scale;
+			camera.orthographicSize = (Screen.height / 1.8f) / pixelsToUnits;
 		}
 	}
 }

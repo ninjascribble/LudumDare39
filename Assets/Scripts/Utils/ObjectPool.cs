@@ -8,6 +8,10 @@ public class ObjectPool : MonoBehaviour {
 
 	private List<Recyclable> poolInstances = new List<Recyclable>();
 
+	void Awake () {
+		DontDestroyOnLoad(gameObject);
+	}
+
 	public Recyclable NextObject(Vector3 pos) {
 		Recyclable instance = null;
 

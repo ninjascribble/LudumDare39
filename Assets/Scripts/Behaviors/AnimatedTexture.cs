@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class AnimatedTexture : MonoBehaviour {
 
-    public Vector2 speed = Vector2.zero;
-
     private Vector2 offset = Vector2.zero;
     private Material material;
 
@@ -17,7 +15,7 @@ public class AnimatedTexture : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        offset += speed * Time.deltaTime;
-        material.SetTextureOffset("_MainTex", offset);
+		offset += GameStats.speed * Time.deltaTime;
+		material.SetTextureOffset("_MainTex", offset);
     }
 }
