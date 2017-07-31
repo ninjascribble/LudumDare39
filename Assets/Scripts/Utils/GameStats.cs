@@ -6,11 +6,13 @@ public class GameStats : MonoBehaviour {
 
 	public static Vector2 speed;
 	public static float distance;
+	public static int reserveFuel;
 
-	private static float initialSpeedX = 0;
-	private static float initialSpeedY = 1;
-	private static float maxSpeed = 5000;
-	private static float initialDistance = 700;
+	private static float initialSpeedX = 0f;
+	private static float initialSpeedY = 1f;
+	private static float maxSpeed = 5000f;
+	private static float initialDistance = 700f;
+	private static int initialReserveFuel = 3;
 
 	void Start() {
 		GameStats.Reset ();
@@ -24,6 +26,7 @@ public class GameStats : MonoBehaviour {
 	public static void Reset() {
 		speed = new Vector2 (initialSpeedX, initialSpeedY);
 		distance = initialDistance;
+		reserveFuel = initialReserveFuel;
 	}
 
 	static void UpdateSpeed() {

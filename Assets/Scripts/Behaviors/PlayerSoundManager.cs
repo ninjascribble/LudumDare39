@@ -7,10 +7,8 @@ public class PlayerSoundManager : MonoBehaviour {
 	public AudioSource playOnBoost;
 	public AudioSource playOnDestroy;
 
-	private void OnTriggerEnter2D(Collider2D collision) {
-		if (collision.gameObject.tag == "booster") {
-			playOnBoost.Play ();
-		}
+	public void PlayBoostClip () {
+		playOnBoost.Play ();
 	}
 
 	private void OnDestroy() {

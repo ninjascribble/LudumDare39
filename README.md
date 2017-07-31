@@ -15,6 +15,11 @@ Good luck, soldier. We're counting on you!
 * **Graphics**: [Pyxel Edit](http://pyxeledit.com/) and [Pixelmator](http://www.pixelmator.com/)
 * **Sound**: [Chiptone](http://sfbgames.com/chiptone/)
 
+### Tips
+* Tap the Left and Right arrow keys to move around.
+* Use the Up arrow key to deploy energy reserves. You only have three, so use them wisely!
+* The hit boxes are small enought that you can _just_ sneak through enemies in formation.
+
 ### The Process
 Honestly, we went into this Ludum Dare with an idea of what _kind_ of game we wanted to build before
 the themes were even announced. The classic top-down shmup has always been one of my favorite genres

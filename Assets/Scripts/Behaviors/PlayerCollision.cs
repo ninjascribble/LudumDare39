@@ -6,30 +6,19 @@ public class PlayerCollision : MonoBehaviour {
 
     private Animator animator;
     private Rigidbody2D player;
+	private PlayerBurst playerBurst;
 
 	// Use this for initialization
 	void Start () {
         animator = GetComponent<Animator>();
         player = GetComponent<Rigidbody2D>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		playerBurst = GetComponent<PlayerBurst> ();
 	}
 
     private void OnTriggerEnter2D(Collider2D collision) {
 		if (collision.gameObject.tag == "booster") {
-			animator.SetBool ("burst", true);
-			player.AddForce (Vector2.up * 300, ForceMode2D.Impulse);
-			GameStats.speed.y += 7;
-		}
-    }
-
-    private void OnTriggerExit2D(Collider2D collision) {
-		if (collision.gameObject.tag == "booster") {
-			animator.SetBool ("burst", false);
 			GameObjectUtil.Destroy (collision.gameObject);
+			playerBurst.Perform ();
 		}
     }
 
