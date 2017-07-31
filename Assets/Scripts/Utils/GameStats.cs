@@ -7,6 +7,7 @@ public class GameStats : MonoBehaviour {
 	public static Vector2 speed;
 	public static float distance;
 	public static int reserveFuel;
+	public static bool showTutorial = true;
 
 	private static float initialSpeedX = 0f;
 	private static float initialSpeedY = 1f;

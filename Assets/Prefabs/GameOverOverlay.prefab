@@ -76,6 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: Gameplay
+  delaySeconds: 0.6
 --- !u!114 &114665970239117726
 MonoBehaviour:
   m_ObjectHideFlags: 1

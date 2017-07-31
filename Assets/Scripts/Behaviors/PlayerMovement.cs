@@ -8,10 +8,12 @@ public class PlayerMovement : MonoBehaviour
 	private const float MAX_VELOCITY = 100;
 	private const int FORCE = 1200;
 	private PlayerBurst playerBurst;
+	private bool playerBurstEnabled;
 
 	void Start() {
 		body = GetComponent<Rigidbody2D>();
 		playerBurst = GetComponent<PlayerBurst>();
+		playerBurstEnabled = true;
 	}
 
 	void FixedUpdate() {
@@ -21,9 +23,13 @@ public class PlayerMovement : MonoBehaviour
 			body.AddForce (Vector2.left * FORCE, ForceMode2D.Force);
 		} else if (Input.GetKey ("right")) {
 			body.AddForce (Vector2.right * FORCE, ForceMode2D.Force);
-		} else if (Input.GetKeyDown ("up") && GameStats.reserveFuel > 0) {
+		}
+
+		if (playerBurstEnabled && Input.GetKey ("up")) {
+			playerBurstEnabled = false;
 			playerBurst.Perform();
 			GameStats.reserveFuel--;
+			StartCoroutine (EnablePlayerBurst ());
 		}
 
 		if (velocityDifference > 0) {
@@ -32,6 +38,14 @@ public class PlayerMovement : MonoBehaviour
 			} else {
 				body.AddForce(Vector2.right * velocityDifference, ForceMode2D.Impulse);
 			}
+		}
+	}
+
+	IEnumerator EnablePlayerBurst () {
+		yield return new WaitForSeconds (0.5f);
+
+		if (GameStats.reserveFuel > 0) {
+			playerBurstEnabled = true;
 		}
 	}
 }
